@@ -9,12 +9,12 @@ variable "default_region" {
   default = "eu-central-1"
 }
 
-variable "Module" {
+variable "module" {
   type        = string
   description = "The source of this terraform repository in relation to the executing repository"
 }
 
-variable "Resource_Owner" {
+variable "resource_owner" {
   type        = string
   description = "The main contact for this project. Should be an email to enable automated messages"
 }

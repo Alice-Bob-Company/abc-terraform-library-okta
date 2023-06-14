@@ -1,2 +1,2 @@
-# buchner-terraform-library
-Buchner specific terraform modules
+# abc-terraform-library-okta
+Alice&Bob.Company specific Okta terraform modules
