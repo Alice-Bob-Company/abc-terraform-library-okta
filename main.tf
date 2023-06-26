@@ -2,7 +2,7 @@ locals {
   provider_name = "Okta"
 }
 resource "aws_iam_saml_provider" "okta" {
-  count = var.okta_enalbed ? 1 : 0
+  count = var.okta_enabled ? 1 : 0
 
   name                   = local.provider_name
   saml_metadata_document = file("Okta.xml")
@@ -16,7 +16,7 @@ resource "aws_iam_saml_provider" "okta" {
 data "aws_caller_identity" "current" {}
 
 resource "aws_iam_role" "okta-admin" {
-  count = var.okta_enalbed ? 1 : 0
+  count = var.okta_enabled ? 1 : 0
 
   name = "okta_admin"
 
@@ -47,7 +47,7 @@ resource "aws_iam_role" "okta-admin" {
 }
 
 resource "aws_iam_role" "okta-dev" {
-  count = var.okta_enalbed ? 1 : 0
+  count = var.okta_enabled ? 1 : 0
 
   name = "okta_dev"
 
@@ -77,14 +77,14 @@ resource "aws_iam_role" "okta-dev" {
   })
 }
 resource "aws_iam_role_policy_attachment" "admin-attach" {
-  count = local.okta_enalbed ? 1 : 0
+  count = local.okta_enabled ? 1 : 0
 
   role       = aws_iam_role.okta-admin[0].name
   policy_arn = "arn:aws:iam::aws:policy/AdministratorAccess"
 }
 
 resource "aws_iam_role_policy_attachment" "dev-attach" {
-  count = var.okta_enalbed ? 1 : 0
+  count = var.okta_enabled ? 1 : 0
 
   role       = aws_iam_role.okta-dev[0].name
   policy_arn = "arn:aws:iam::aws:policy/ReadOnlyAccess"

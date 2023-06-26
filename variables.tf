@@ -19,7 +19,7 @@ variable "resource_owner" {
   description = "The main contact for this project. Should be an email to enable automated messages"
 }
 
-variable "okta_enalbed" {
+variable "okta_enabled" {
   type        = bool
   description = "Okta module enabled?"
   default     = true
