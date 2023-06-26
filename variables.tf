@@ -18,8 +18,3 @@ variable "resource_owner" {
   type        = string
   description = "The main contact for this project. Should be an email to enable automated messages"
 }
-
-variable "okta_enabled" {
-  type        = bool
-  description = "Okta module enabled?"
-}
