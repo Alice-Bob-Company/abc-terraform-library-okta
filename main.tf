@@ -79,13 +79,13 @@ resource "aws_iam_role" "okta-dev" {
 resource "aws_iam_role_policy_attachment" "admin-attach" {
   count = fileexists("Okta.xml") ? 1 : 0
 
-  role       = aws_iam_role.okta-admin.name
+  role       = aws_iam_role.okta-admin[0].name
   policy_arn = "arn:aws:iam::aws:policy/AdministratorAccess"
 }
 
 resource "aws_iam_role_policy_attachment" "dev-attach" {
   count = fileexists("Okta.xml") ? 1 : 0
 
-  role       = aws_iam_role.okta-dev.name
+  role       = aws_iam_role.okta-dev[0].name
   policy_arn = "arn:aws:iam::aws:policy/ReadOnlyAccess"
 }
