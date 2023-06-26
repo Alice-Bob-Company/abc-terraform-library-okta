@@ -6,7 +6,7 @@ Alice&Bob.Company specific Okta terraform modules
 ## Step 2: Include module
 
     module "okta" {
-      source = "git::https://github.com/Alice-Bob-Company/abc-terraform-library-okta.git"
+      source = "git::https://github.com/Alice-Bob-Company/aft-terraform-library-okta.git"
 
       #general
       account_name   = "customer-project-environment"
