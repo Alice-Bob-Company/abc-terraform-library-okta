@@ -77,7 +77,7 @@ resource "aws_iam_role" "okta-dev" {
   })
 }
 resource "aws_iam_role_policy_attachment" "admin-attach" {
-  count = local.okta_enabled ? 1 : 0
+  count = var.okta_enabled ? 1 : 0
 
   role       = aws_iam_role.okta-admin[0].name
   policy_arn = "arn:aws:iam::aws:policy/AdministratorAccess"

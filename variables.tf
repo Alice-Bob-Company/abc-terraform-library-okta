@@ -22,5 +22,4 @@ variable "resource_owner" {
 variable "okta_enabled" {
   type        = bool
   description = "Okta module enabled?"
-  default     = true
 }
